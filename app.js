@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // MongoDB Connection
 mongoose
-  .connect(mongoDbUri, { useNewUrlParser: true })
+  .connect(mongoDbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
       console.log('MongoDB Connected');
   }).catch(err => {
